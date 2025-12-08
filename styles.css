@@ -33,11 +33,11 @@ li::marker {
 
 input {
   width: 256px;
-  height: 25px;
+  height: 40px;
   border-radius: 8px;
   padding-left: 18px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: 1px solid var(--content-light-main);
   background-color: var(--dom-dop);
   color: var(--content-main);
@@ -64,7 +64,8 @@ a {
 }
 
 .wrapper {
-  width: 100vw;
+  margin: 0 auto;
+  width: max-content;
   padding: 5px;
 }
 
@@ -88,27 +89,6 @@ button {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-}
-
-.view {
-  background: var(--accent-red);
-  color: var(--content-light-main);
-  padding: 10px;
-  margin: 10px auto;
-  width: 500px;
-  height: 300px;
-  border: 20px solid var(--accent-green);
-  font-size: 20px;
-  overflow-y: scroll;
-}
-
-.scroll-lock {
-  overflow: hidden;
-}
-
-.spacer {
-  margin-bottom: 600px;
 }
 
 .task {
@@ -125,4 +105,10 @@ header {
 
 .task.isVisible {
   opacity: 1;
+}
+
+.task-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
