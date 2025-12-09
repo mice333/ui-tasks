@@ -66,6 +66,7 @@ button {
   font-family: "Roboto";
   font-weight: 500;
   font-size: 18px;
+  cursor: pointer;
 }
 
 .task {
@@ -121,6 +122,6 @@ button {
   align-items: center;
 }
 
-.btn.close {
+.btn {
   cursor: pointer;
 }

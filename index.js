@@ -1,16 +1,23 @@
 const list = document.querySelector(".task-list");
 
-const tasksList = [];
+const tasksList = [
+  {
+    id: 1,
+    name: "jog",
+  },
+  {
+    id: 2,
+    name: "run",
+  },
+  {
+    id: 3,
+    name: "jewelry",
+  },
+];
 
-let id = 1;
-if (tasksList.length !== 0) {
-  for (let i = 0; i <= id; i++) {
-    list.insertAdjacentHTML(
-      "beforeend",
-      `<div class="task">${tasksList[i].id} ${tasksList[i].name}</div>`
-    );
-  }
-}
+let id = tasksList.length + 1;
+
+renderTaskList();
 
 let tasks = document.querySelectorAll(".task");
 
@@ -54,3 +61,45 @@ openModal.addEventListener("click", () => {
   const modal = document.querySelector(".modal_overlay");
   modal.classList.add("active");
 });
+
+const search = document.querySelector('[name="search"]');
+
+search.addEventListener("change", () => {
+  if (tasksList.length !== 0) {
+    console.log("Input value changed:", search.value);
+    list.innerHTML = "";
+    for (let i = 0; i < tasksList.length; i++) {
+      if (tasksList[i].name.includes(search.value))
+        list.insertAdjacentHTML(
+          "beforeend",
+          `<div class="task isVisible">${tasksList[i].id} ${tasksList[i].name}</div>`
+        );
+    }
+  }
+  if (search.value === "") {
+    console.log(tasksList.length);
+
+    if (tasksList.length !== 0) {
+      console.log("Input value changed:", search.value);
+      list.innerHTML = "";
+      for (let i = 0; i < tasksList.length; i++) {
+        if (tasksList[i].name.includes(search.value))
+          list.insertAdjacentHTML(
+            "beforeend",
+            `<div class="task isVisible">${tasksList[i].id} ${tasksList[i].name}</div>`
+          );
+      }
+    }
+  }
+});
+
+function renderTaskList() {
+  if (tasksList.length !== 0) {
+    for (let i = 0; i < tasksList.length; i++) {
+      list.insertAdjacentHTML(
+        "beforeend",
+        `<div class="task">${tasksList[i].id} ${tasksList[i].name}</div>`
+      );
+    }
+  }
+}
