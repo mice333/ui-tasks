@@ -3,16 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOM JS</title>
+    <title>tasks</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <div>mice333</div>
-      <nav class="navigation">
-        <a href="#">Projects</a><a href="#">About me</a>
-      </nav>
-    </header>
+    <div class="modal_overlay">
+      <div class="modal">
+        <div class="modal_header">
+          <h1>New task</h1>
+          <div class="btn close">&#10006;</div>
+        </div>
+        <div>
+          <label for="taskname">Task name:</label>
+          <input type="text" name="taskname" />
+          <button class="btn add">Submit</button>
+        </div>
+      </div>
+    </div>
     <div class="wrapper">
       <div class="task-options">
         <input placeholder="search" name="search" type="search" />

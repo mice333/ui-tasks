@@ -23,14 +23,6 @@ body {
   color: var(--content-main);
 }
 
-span {
-  color: var(--accent-main);
-}
-
-li::marker {
-  color: #3773cc;
-}
-
 input {
   width: 256px;
   height: 40px;
@@ -55,12 +47,7 @@ input:focus {
 }
 
 ::-webkit-input-placeholder {
-  /* WebKit, Blink, Edge */
   color: var(--content-light-main);
-}
-
-a {
-  color: var(--accent-main);
 }
 
 .wrapper {
@@ -79,16 +66,6 @@ button {
   font-family: "Roboto";
   font-weight: 500;
   font-size: 18px;
-}
-
-.navigation {
-  display: flex;
-  gap: 20px;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
 }
 
 .task {
@@ -111,4 +88,39 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.modal_overlay {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #00000060;
+  z-index: 999;
+}
+
+.modal {
+  background: var(--dom-main);
+  width: 500px;
+  height: 200px;
+  padding: 12px;
+  border-radius: 16px;
+  margin: 200px auto;
+}
+
+.modal_overlay.active {
+  visibility: visible;
+}
+
+.modal_header {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn.close {
+  cursor: pointer;
 }
